@@ -54,6 +54,7 @@ window.addEventListener("mousemove", (e) => {
     response.style.transform = "rotate(2deg)";
   });
 
+
 /*----------------------------------------------------*/
 // KeyPress event
 const keypressContainer = document.querySelector(".keypress");
@@ -195,7 +196,7 @@ btn2.addEventListener("click", () => {
     questionContainer.innerHTML += "<h3>Bravo " + answer + "</h3>";
   });
   
-  // Timer, compte à rebours
+  // Timer, Compte à rebours
   setTimeout(() => {
     questionContainer.style.borderRadius = "300px";
   }, 2000);
