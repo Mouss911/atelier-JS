@@ -1,0 +1,30 @@
+.{ padding: 0; margin: 0; box-sizing: border-box;}
+
+.calculatrice{ width: 400px; background-color: #E3EAF1; padding: 10px 30px; position: absolute;
+    transform: translate(-50%, -50%); top: 50%; left: 50%; border-radius: 10px; 
+    box-shadow: 0 20px 50px #E3EAF1; border: 1px solid black;}
+
+h5{ text-align: center; color: black;}
+
+.display{ width: 100%; padding: 7px; border: 1px solid black; background-color: white; color: black;}
+
+.display #input{ width: 100%; text-align: right; font-size: 35px; border: none;}
+.display #input-b{ width: 100%; font-size: 20px; border: none;}
+
+.display input::placeholder{ color: #B9B6C8;}
+
+.buttons{ display: grid; grid-template-columns: repeat(5, 1fr); grid-gap: 20px; margin-top: 40px;}
+input:active{ transform: translateY(-2px)}
+
+.buttons input[type="button"]{ font-size: 20px; padding: 15px; border: 2px solid black; background-color: white;
+    color: black; cursor: pointer; border-radius: 5px; font-weight: bold; box-shadow: 0 5px 5px black;}
+
+input[type="button"][value="+"]{ grid-row: span 2; background-color: greenyellow;}
+input[type="button"][value="="]{ background-color: yellow;}
+input[type="button"][value="CE"]{ background-color: blue;}
+input[type="button"][value="C"]{ background-color: red;}
+
+input[type="button"][value="0"]{ grid-column: span 2;}
+input[type="button"][value="Séparer milliers*"]{ width: 80%; padding: 15px; margin-top: 10px; border-radius: 8px;
+    font-size: 20px; font-weight: bold; cursor: pointer;}
+p{ color: gray; font-size: 17px; font-weight: bold;}
