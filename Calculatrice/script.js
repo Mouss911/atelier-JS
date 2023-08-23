@@ -22,6 +22,11 @@ button_input.forEach((button_class) => {
     });
 });
 
+// erase.addEventListener("click", () =>{
+    
+// });
+
+
 // Résoudre les opérations quand on clique sur le bouton 'Egal'
 equal.addEventListener("click", () => {
     equal_pressed = 1;
@@ -41,11 +46,3 @@ equal.addEventListener("click", () => {
      alert("Input invalide");   
     }
 });
-
-erase.addEventListener("click", () =>{
-    erase.value = display.value.slice(0, -1);
-})
-
-clear.addEventListener("click", () =>{
-    clear.value = display.value="";
-})
