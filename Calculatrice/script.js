@@ -41,3 +41,11 @@ equal.addEventListener("click", () => {
      alert("Input invalide");   
     }
 });
+
+erase.addEventListener("click", () =>{
+    erase.value = display.value.slice(0, -1);
+})
+
+clear.addEventListener("click", () =>{
+    clear.value = display.value="";
+})
