@@ -43,8 +43,8 @@ function calculateTip(billAmount, tipPercentage, numberOfPeople) {
     let totalAmount = (tipAmount * numberOfPeople + billAmount) / numberOfPeople;
     totalAmount = totalAmount.toFixed(2);
 
-    billTipAmount.innerHTML = `$${tip}`;
-    billTotalPerPerson.innerHTML = `$${totalAmount}`;
+    billTipAmount.innerHTML = `$${tip}`;   // Tip Amount par personne
+    billTotalPerPerson.innerHTML = `$${totalAmount}`;   // Total par personne
 }
 
 resetButton.addEventListener("click", resetEveryThing);
