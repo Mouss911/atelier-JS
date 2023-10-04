@@ -5,22 +5,22 @@ function validateForm() {
     let telephone = document.getElementById("telephone").value;
 
     if(prenom === ""){
-        alert("Veuillez le champ prenom")
+        alert("Veuillez remplir le champ prenom")
         return false;
     }
 
     if(nom === ""){
-        alert("Veuillez le champ nom")
+        alert("Veuillez remplir le champ nom")
         return false;
     }
 
     if(telephone === ""){
-        alert("Veuillez le champ telephone")
+        alert("Veuillez remplir le champ telephone")
         return false;
     }
 
     if(email === ""){
-        alert("Veuillez le champ email")
+        alert("Veuillez remplir le champ email")
         return false;
     } 
     // else if (!email.includes("@")){
@@ -123,24 +123,4 @@ function updateData(index){
     document.getElementById("email").value = listUser[index].email;
     document.getElementById("telephone").value = listUser[index].telephone;
 
-    document.querySelector("#edit").onclick = function(){
-        if(validateForm() == true){
-            listUser[index].prenom = document.getElementById("prenom").value;
-            listUser[index].nom = document.getElementById("nom").value;
-            listUser[index].email = document.getElementById("email").value;
-            listUser[index].telephone = document.getElementById("telephone").value;
-
-            localStorage.setItem("listUser", JSON.stringify(listUser));
-            
-            showData();
-
-            document.getElementById("prenom").value = "";
-            document.getElementById("nom").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("telephone").value = "";
-
-            document.getElementById("submit").style.display = "block";
-            document.getElementById("edit").style.display = "none";
-        }
-    }
 }
