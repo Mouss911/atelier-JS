@@ -21,16 +21,18 @@ button{ outline: none; border: 0; background: transparent;}
 .form-control input{ width: 100%; padding: 17px 14px; outline: 0; border: 0; font-size: 15px;
     letter-spacing: 0.5px;}
 .form-control i{ position: absolute; top: 1rem; right: 1rem; cursor: pointer;}
+i{ cursor: pointer;}
 .dropDownTop{ width: 200px; position: relative;}
 .dropDown{ width: 100%; padding: 17px 14px; border-radius: 5px;  
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); display: flex; justify-content: space-between;
     cursor: pointer; font-size: 15px;}
 .dropDown p{ letter-spacing: 0.5px;}
 .drop{ position: absolute; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); top: 4rem;
-    padding: 10px 14px; width: 100%; border-radius: 5px; background: var(--bgColor);}
+    padding: 10px 14px; width: 100%; border-radius: 5px; background: var(--bgColor); cursor: pointer;}
 .drop p{ margin: 5px 0;}
+.drop p:hover{ background-color: gray;}
 .countries{ padding: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px}
+    grid-gap: 50px}
 .country{ min-height: 350px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); width: 300px;
     border-radius: 5px; overflow: hidden;}
 .country-img{ height: 250px;}
@@ -39,3 +41,5 @@ button{ outline: none; border: 0; background: transparent;}
 .country-info h5{ padding: 8px 0; font-size: 20px; letter-spacing: 1px;}
 .country-info p{ letter-spacing: 1px;}
 .country-info p>strong{ font-weight: 600;}
+
+.showDropDown{ display: none;}
