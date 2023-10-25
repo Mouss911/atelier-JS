@@ -7,6 +7,8 @@ body{
     --fontcolor: hsl(200, 15%, 8%);
     font-family: Arial, Helvetica, sans-serif;
 }
+.dark{ --bgColor: hsl(200, 15%, 8%); --fontcolor: hsl(0, 0%, 98%); background: var(--bgColor);
+    color: var(--fontcolor); --countrybgColor : hsl(207, 26%, 17%)}
 
 .container{ width: 100%; padding: 30px; display: flex; justify-content: space-between;}
 .container:nth-child(1){ box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);}
@@ -17,12 +19,12 @@ button{ outline: none; border: 0; background: transparent;}
 .toggle i{ padding-right: 5px;}
 
 .form-control{ width: 400px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); position: relative;
-    border-radius: 5px; overflow: hidden;}
+    border-radius: 5px; overflow: hidden; background: var(--countrybgColor);}
 .form-control input{ width: 100%; padding: 17px 14px; outline: 0; border: 0; font-size: 15px;
-    letter-spacing: 0.5px;}
+    letter-spacing: 0.5px; background: transparent; color: var(--fontcolor);}
 .form-control i{ position: absolute; top: 1rem; right: 1rem; cursor: pointer;}
 i{ cursor: pointer;}
-.dropDownTop{ width: 200px; position: relative;}
+.dropDownTop{ width: 200px; position: relative; background: var(--countrybgColor); border-radius: 5px;}
 .dropDown{ width: 100%; padding: 17px 14px; border-radius: 5px;  
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); display: flex; justify-content: space-between;
     cursor: pointer; font-size: 15px;}
@@ -34,9 +36,9 @@ i{ cursor: pointer;}
 .countries{ padding: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 50px}
 .country{ min-height: 350px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); width: 300px;
-    border-radius: 5px; overflow: hidden;}
+    border-radius: 5px; overflow: hidden; background: var(--countrybgColor);}
 .country-img{ height: 250px;}
-.country-img img{ width: 100%; height: 100%;}
+.country-img img{ width: 100%; height: 100%; object-fit: cover;}
 .country-info{ padding: 20px 17px;}
 .country-info h5{ padding: 8px 0; font-size: 20px; letter-spacing: 1px;}
 .country-info p{ letter-spacing: 1px;}

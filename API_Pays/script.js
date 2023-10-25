@@ -2,9 +2,10 @@ const countriesElem = document.querySelector(".countries");
 const dropDown = document.querySelector(".dropDown");
 const dropElem = document.querySelector(".drop");
 const region = document.querySelectorAll(".region");
-const regionName = document.querySelectorAll(".regionName");
-// const search = document.querySelector("search");
-const inputs = document.getElementById("input");
+const search = document.querySelector(".search");
+const toggle = document.querySelector(".toggle");
+const moon = document.querySelector(".moon");
+
 
 async function getCountry(){
     const url = await fetch("https://restcountries.com/v3.1/all")
@@ -14,6 +15,7 @@ async function getCountry(){
         showCountry(element)
     });
 }
+
 getCountry();
 function showCountry(data){
     const country = document.createElement("div")
@@ -23,7 +25,7 @@ function showCountry(data){
     <img src="${data.flags.png}" alt="">
 </div>
 <div class="country-info">
-    <h5>${data.name.common}</h5>
+    <h5 class="countryName">${data.name.common}</h5>
     <p><strong>Population :</strong>${data.population}</p>
     <p class="regionName"><strong>Region :</strong>${data.region}</p>
     <p><strong>Capital :</strong>${data.capital}</p>
@@ -35,28 +37,33 @@ dropDown.addEventListener("click", () =>{
     dropElem.classList.toggle("showDropDown")
 })
 
+const regionName = document.getElementsByClassName("regionName");
+const countryName = document.getElementsByClassName("countryName");
+
 region.forEach(element => {
     element.addEventListener("click", ()=>{
-        regionName.forEach(element => {
-            console.log(element);
-        })
-    })
+        console.log(element.innerText);
+        Array.from(regionName).forEach(elem =>{
+            if(elem.innerText.includes(element.innerText) || element.innerText=="All"){
+                elem.parentElement.parentElement.style.display="grid"
+            } else {
+                elem.parentElement.parentElement.style.display="none"   
+            }
+        });
+    });
 });
 
-
-inputs.addEventListener("input", ()=>{
-    async function getResearch(){
-        if(inputs.value===''){
-            alert("Veuillez mettre un nom de pays connu!")
-        } else{
-        const url1 = await fetch(`https://restcountries.com/v3.1/name/${inputs.value}`)
-        const resp = await url1.json();
-        console.log(resp, "bravo");
-        // countriesElem.innerHTML = "";
-        // res.forEach(element => {
-        //     showCountry(element)
-        // });
-    }
+search.addEventListener("input", ()=>{
+    Array.from(countryName).forEach(elem =>{
+        if(elem.innerText.toLowerCase().includes(search.value.toLowerCase())){
+            elem.parentElement.parentElement.style.display="grid"
+        } else {
+            elem.parentElement.parentElement.style.display="none"   
         }
-        getResearch();
+    });
+})
+
+toggle.addEventListener("click", ()=>{
+    document.body.classList.toggle("dark")
+    lune.classList.toggle("fa-moon")
 })
